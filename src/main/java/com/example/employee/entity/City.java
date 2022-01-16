@@ -8,33 +8,12 @@ import java.util.Set;
 @Table(name = "city")
 public class City {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     private String name;
     private String postalCode;
     private String internationalName;
 
-//    @OneToMany(cascade=CascadeType.ALL)
-//    private Set<Employee> employees;
-//
-//    public Set<Employee> getEmployees() {
-//        return employees;
-//    }
-//
-//    public void setEmployees(Set<Employee> employees) {
-//        this.employees = employees;
-//    }
-
-    //    @OneToMany(mappedBy="employee", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    private List<Employee> employee;
-//
-//    public List<Employee> getEmployee() {
-//        return employee;
-//    }
-//
-//    public void setEmployee(List<Employee> employee) {
-//        this.employee = employee;
-//    }
 
     public String getInternationalName() {
         return internationalName;

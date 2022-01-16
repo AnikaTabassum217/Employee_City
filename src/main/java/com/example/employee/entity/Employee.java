@@ -9,7 +9,7 @@ import java.util.List;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @Column(nullable = false, length = 20, unique = true)
@@ -34,10 +34,6 @@ public class Employee {
     @JoinColumn(name = "city_id")
     private City city;
 
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "city_id")
-//    private City city;
-//
     public City getCity() {
         return city;
     }
