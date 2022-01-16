@@ -7,6 +7,7 @@ import com.example.employee.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,6 +26,13 @@ public class EmployeeService {
             emp.setName("name");
             emp.setCity(cityOptional.get());
             employeeRepository.save(emp);
+
         }
+    }
+
+    public Employee findEmpById(long id) {
+        Employee employee = employeeRepository.findById(id).get();
+        employee.getCity().getName();
+        return employee;
     }
 }
